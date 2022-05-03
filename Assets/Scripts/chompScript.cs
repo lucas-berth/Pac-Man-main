@@ -39,6 +39,7 @@ public class chompScript : MonoBehaviour
     }
 
 
+    
     void OnCollisionEnter(Collision collision)
     {
         print("this is working");

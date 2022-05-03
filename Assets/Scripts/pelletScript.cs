@@ -19,6 +19,7 @@ public class pelletScript : MonoBehaviour
         
     }
 
+    /*
     void OnCollisionEnter(Collision collision)
     {
         print("this is working");
@@ -29,6 +30,8 @@ public class pelletScript : MonoBehaviour
         }
         
     }
+
+    */
     // Start is called before the first frame update
     
 
