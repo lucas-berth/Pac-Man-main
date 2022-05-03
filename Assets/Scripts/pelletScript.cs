@@ -8,6 +8,17 @@ public class pelletScript : MonoBehaviour
     public GameObject pellet;
     private int count;
 
+    void Start()
+    {
+       rb = this.gameObject.GetComponent<Rigidbody>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         print("this is working");
@@ -19,19 +30,12 @@ public class pelletScript : MonoBehaviour
         
     }
     // Start is called before the first frame update
-    void Start()
-    {
-       rb = this.gameObject.GetComponent<Rigidbody>();
-    }
+    
 
     public int getScore()
     {
         return count;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

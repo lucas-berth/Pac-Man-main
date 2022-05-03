@@ -39,7 +39,6 @@ public class chompScript : MonoBehaviour
     }
 
 
-    
     void OnCollisionEnter(Collision collision)
     {
         print("this is working");
@@ -49,7 +48,6 @@ public class chompScript : MonoBehaviour
             Destroy(pellet);
         }
     }
-
     
     
     void Update()
@@ -113,4 +111,6 @@ public class chompScript : MonoBehaviour
             
         }
     }
+
+    
 }
