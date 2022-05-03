@@ -18,21 +18,39 @@ public class chompScript : MonoBehaviour
     private bool goRight = false;
     private bool goLeft = false;
 
+    public GameObject pellet;
+   
+
+    int count = 0;
+
     void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         pinkGhostAgent = this.pinkGhost.GetComponent<NavMeshAgent>();
         pinkGhostAgent.speed = 2.0f;
         this.theScoreTextMesh = this.scoreText.GetComponent<TextMesh>();
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        this.theScoreTextMesh.text = "WOOT!!!";
+        this.theScoreTextMesh.text = "Score: " + count;
     }
 
-    // Update is called once per frame
+
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        print("this is working");
+        if(collision.gameObject.tag.Equals("Pellet"))
+        {
+            count++;
+            Destroy(pellet);
+        }
+    }
+
+    
     
     void Update()
     {
