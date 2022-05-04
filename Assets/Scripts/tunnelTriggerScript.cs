@@ -5,6 +5,8 @@ using UnityEngine;
 public class tunnelTriggerScript : MonoBehaviour
 {
 
+    //public GameObject theOtherSpawnPoint;
+
     public Transform spawnPointLeft;
     public Transform spawnPointRight;
     public GameObject thePlayer;
@@ -16,6 +18,7 @@ public class tunnelTriggerScript : MonoBehaviour
     }
 
 
+    
     void OnCollisionEnter(Collision collision)
     {
         if(this.tag.Equals("cubeRight"))
@@ -36,9 +39,32 @@ public class tunnelTriggerScript : MonoBehaviour
         }
         
     }
+    
 
 
 
+
+
+
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        if(coreScript.currentTrigger == null)
+        {
+            coreScript.currentTrigger = other.gameObject;
+            other.gameObject.transform.position = this.theOtherSpawnPoint.transform.position;
+            
+        }
+        
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        coreScript.currentTrigger = null;
+    }
+
+    */
 
 
     void Update()

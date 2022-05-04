@@ -12,7 +12,7 @@ public class pelletScript : MonoBehaviour
     public GameObject scoreText;
     TextMesh theScoreTextMesh;
 
-    int count = 0;
+    //int count = 0;
 
 
     void Awake()
@@ -37,17 +37,13 @@ public class pelletScript : MonoBehaviour
 
     
     //the score updates once but never again... does not make sense
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        
         if(collision.gameObject.tag.Equals("Player"))
         {
+            coreScript.score++;
             Destroy(this.gameObject);
-            count++;
-            this.theScoreTextMesh.text = "Score: " + count;
-            
         }
-        
     }
 
     

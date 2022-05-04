@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class coreScript : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject Pellet;
-    public GameObject Ghost;
+    public static int score = 0;
 
     void Start()
     {
