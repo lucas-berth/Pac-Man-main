@@ -12,6 +12,8 @@ public class pelletScript : MonoBehaviour
     public GameObject scoreText;
     TextMesh theScoreTextMesh;
 
+    public static bool chompkillswitch = false;
+
     //int count = 0;
 
 
@@ -23,7 +25,13 @@ public class pelletScript : MonoBehaviour
 
     void Start()
     {
-        
+        /*
+        if(chompkillswitch == true)
+        {
+            Invoke("setBool", 3);
+            print("kill switch off");
+        }
+        */
        
     }
 
@@ -33,7 +41,21 @@ public class pelletScript : MonoBehaviour
         //this.theScoreTextMesh.text = "Score: " + count.ToString();
     }
 
+    private IEnumerator setBool()
+    {
+        print("this is working");
+        yield return new WaitForSeconds(3);
+        chompkillswitch = false;
+        print("kill switch off");
 
+    }
+
+    void otherSetBool()
+    {
+        print("this is working");
+        chompkillswitch = false;
+        print("kill switch off");
+    }
 
     
     //the score updates once but never again... does not make sense
@@ -42,7 +64,12 @@ public class pelletScript : MonoBehaviour
         if(collision.gameObject.tag.Equals("Player"))
         {
             coreScript.score++;
+            chompkillswitch = true;
+            print("kill switch on");
+            Invoke("otherSetBool", 3);
+            //StartCoroutine(setBool());
             Destroy(this.gameObject);
+            Invoke("otherSetBool", 3.0f);
         }
     }
 

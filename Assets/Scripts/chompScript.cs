@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+//using UnityEngine.AI;
 
 public class chompScript : MonoBehaviour
 {
     Rigidbody rb;
-    NavMeshAgent pinkGhostAgent;
+    //NavMeshAgent pinkGhostAgent;
     //TextMesh theScoreTextMesh;
 
    // public GameObject scoreText;
     public float speed = 20.0f;
-    public GameObject pinkGhost;
+    //public GameObject pinkGhost;
 
     private bool goForward = false;
     private bool goBackward = false;
     private bool goRight = false;
     private bool goLeft = false;
 
-    //public GameObject pellet;
-    public pelletScript thePellet;
+    public GameObject theGhost;
+
+
    
 
     //private int count;
@@ -27,8 +28,8 @@ public class chompScript : MonoBehaviour
     void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
-        pinkGhostAgent = this.pinkGhost.GetComponent<NavMeshAgent>();
-        pinkGhostAgent.speed = 2.0f;
+        //pinkGhostAgent = this.pinkGhost.GetComponent<NavMeshAgent>();
+        //pinkGhostAgent.speed = 2.0f;
         //this.theScoreTextMesh = this.scoreText.GetComponent<TextMesh>();
 
     }
@@ -39,22 +40,22 @@ public class chompScript : MonoBehaviour
         //this.theScoreTextMesh.text = "Score: " + thePellet.count;
     }
 
-
+    
     /*
     void OnCollisionEnter(Collision collision)
     {
         
         if(collision.gameObject.tag.Equals("Pellet"))
         {
-            count++;
-            
+            chompkillswitch = true;
+            print("kill switch on");
         }
     }
     */
     
     void Update()
     {
-        this.pinkGhostAgent.SetDestination(this.gameObject.transform.position);
+        //this.pinkGhostAgent.SetDestination(this.gameObject.transform.position);
         
 
         if (goForward)
