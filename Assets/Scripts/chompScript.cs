@@ -7,9 +7,9 @@ public class chompScript : MonoBehaviour
 {
     Rigidbody rb;
     NavMeshAgent pinkGhostAgent;
-    TextMesh theScoreTextMesh;
+    //TextMesh theScoreTextMesh;
 
-    public GameObject scoreText;
+   // public GameObject scoreText;
     public float speed = 20.0f;
     public GameObject pinkGhost;
 
@@ -18,42 +18,44 @@ public class chompScript : MonoBehaviour
     private bool goRight = false;
     private bool goLeft = false;
 
-    public GameObject pellet;
+    //public GameObject pellet;
+    public pelletScript thePellet;
    
 
-    int count = 0;
+    //private int count;
 
     void Awake()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         pinkGhostAgent = this.pinkGhost.GetComponent<NavMeshAgent>();
         pinkGhostAgent.speed = 2.0f;
-        this.theScoreTextMesh = this.scoreText.GetComponent<TextMesh>();
+        //this.theScoreTextMesh = this.scoreText.GetComponent<TextMesh>();
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        this.theScoreTextMesh.text = "Score: " + count;
+        //this.theScoreTextMesh.text = "Score: " + thePellet.count;
     }
 
 
-    
+    /*
     void OnCollisionEnter(Collision collision)
     {
-        print("this is working");
+        
         if(collision.gameObject.tag.Equals("Pellet"))
         {
             count++;
-            Destroy(pellet);
+            
         }
     }
-    
+    */
     
     void Update()
     {
         this.pinkGhostAgent.SetDestination(this.gameObject.transform.position);
+        
 
         if (goForward)
         {

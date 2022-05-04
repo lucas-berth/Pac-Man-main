@@ -5,6 +5,11 @@ using UnityEngine;
 public class tunnelTriggerScript : MonoBehaviour
 {
 
+    public Transform spawnPointLeft;
+    public Transform spawnPointRight;
+    public GameObject thePlayer;
+
+
     void Awake()
     {
 
@@ -18,6 +23,7 @@ public class tunnelTriggerScript : MonoBehaviour
             if(collision.gameObject.tag.Equals("Player"))
             {
                 print("spawning left");
+                thePlayer.transform.position = spawnPointLeft.position;
             }
         }
         else if(this.tag.Equals("cubeLeft"))
@@ -25,10 +31,12 @@ public class tunnelTriggerScript : MonoBehaviour
             if(collision.gameObject.tag.Equals("Player"))
             {
                 print("spawning right");
+                thePlayer.transform.position = spawnPointRight.position;
             }
         }
         
     }
+
 
 
 

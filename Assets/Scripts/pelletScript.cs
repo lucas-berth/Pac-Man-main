@@ -5,12 +5,22 @@ using UnityEngine;
 public class pelletScript : MonoBehaviour
 {
     private Rigidbody rb;
-    public GameObject pellet;
-    private int count;
+    //public GameObject pellet;
+    public GameObject thePlayer;
+    
+
+    public GameObject scoreText;
+    TextMesh theScoreTextMesh;
+
+    void Awake()
+    {
+        this.theScoreTextMesh = this.scoreText.GetComponent<TextMesh>();
+        rb = this.gameObject.GetComponent<Rigidbody>();
+    }
 
     void Start()
     {
-       rb = this.gameObject.GetComponent<Rigidbody>();
+       
     }
 
     // Update is called once per frame
@@ -18,27 +28,24 @@ public class pelletScript : MonoBehaviour
     {
         
     }
-
-    /*
+    
+    //the score updates once but never again... does not make sense
     void OnCollisionEnter(Collision collision)
     {
-        print("this is working");
+        int count = 0;
         if(collision.gameObject.tag.Equals("Player"))
         {
             Destroy(this.gameObject);
-            count++;
+            this.theScoreTextMesh.text = "Score: " + count++;
         }
         
     }
 
-    */
+    
     // Start is called before the first frame update
     
 
-    public int getScore()
-    {
-        return count;
-    }
+    
 
     
 }
