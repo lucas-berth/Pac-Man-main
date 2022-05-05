@@ -46,7 +46,7 @@ public class pelletScript : MonoBehaviour
 
     private IEnumerator setBool()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         chompkillswitch = false;
         print("kill switch off");
 
